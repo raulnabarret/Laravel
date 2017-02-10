@@ -34,7 +34,7 @@ Route::get('/tasks', 'TasksController@index');
 //     return view('tasks.index', compact('tasks'));
 // });
 
-Route::get('/tasks/{id}', 'TasksController@show');
+Route::get('/tasks/{task}', 'TasksController@show');
 
 // Route::get('/tasks/{id}', function ($id) {
 // 	// $task = DB::table('tasks')->find($id);
