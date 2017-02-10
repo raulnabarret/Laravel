@@ -12,32 +12,40 @@ use App\Task;
 |
 */
 
-Route::get('/', function () {
+/*
+	1. Route
+	2. Controller: plural, e.g. PostsController
+	3. Model: singular, e.g. Post
+	4. Migration: e.g. create_posts_table
 
-    return view('welcome');
+*/
 
-});
+Route::get('/', 'PostsController@index');
 
+Route::get('/posts/{post}', 'PostsController@show');
 
-Route::get('/about', function () {
-
-    return view('about');
-
-});
-
-Route::get('/tasks', 'TasksController@index');
-
-// Route::get('/tasks/', function () {
-
-// 	// $tasks = DB::table('tasks')->get();
-// 	$tasks = Task::all();
-//     return view('tasks.index', compact('tasks'));
+// Route::get('/', function () {
+//     return view('welcome');
 // });
 
-Route::get('/tasks/{task}', 'TasksController@show');
 
-// Route::get('/tasks/{id}', function ($id) {
-// 	// $task = DB::table('tasks')->find($id);
-// 	$task = Task::find($id);
-// 	return view('tasks.show', compact('task'));
+// Route::get('/about', function () {
+//     return view('about');
 // });
+
+// Route::get('/tasks', 'TasksController@index');
+
+// // Route::get('/tasks/', function () {
+
+// // 	// $tasks = DB::table('tasks')->get();
+// // 	$tasks = Task::all();
+// //     return view('tasks.index', compact('tasks'));
+// // });
+
+// Route::get('/tasks/{task}', 'TasksController@show');
+
+// // Route::get('/tasks/{id}', function ($id) {
+// // 	// $task = DB::table('tasks')->find($id);
+// // 	$task = Task::find($id);
+// // 	return view('tasks.show', compact('task'));
+// // });
