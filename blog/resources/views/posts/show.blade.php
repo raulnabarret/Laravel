@@ -2,6 +2,13 @@
 
 @section('content')
 
-	<h1>Hello</h1>
+<div class="col-sm-8 blog-main">
+	
+	<h1>{{ $post->title }}</h1>
+	<hr>
+	<p>{{ $post->body }}</p>
+
+</div>
+
 	
 @endsection
