@@ -20,7 +20,8 @@ use App\Task;
 
 */
 
-Route::get('/', 'PostsController@index');
+Route::get('/', 'PostsController@index')->name('home');
+
 
 Route::get('/posts/create', 'PostsController@create');
 
@@ -29,6 +30,19 @@ Route::get('/posts/{post}', 'PostsController@show');
 Route::post('/posts/', 'PostsController@store');
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
+
+
+Route::get('/signup', 'RegistrationController@create');
+
+Route::post('/signup', 'RegistrationController@store');
+
+
+Route::get('/signin', 'SessionsController@create');
+
+Route::post('/signin', 'SessionsController@store');
+
+
+Route::get('/signout', 'SessionsController@destroy');
 
 // Route::get('/', function () {
 //     return view('welcome');
